@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Prueba_BanReservas.Models.Persona>
+
+@{
+    ViewBag.Title = "ListadoPersona";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mt-4 mb-5 d-flex justify-content-center">
+    <div class="col-lg-6">
+        <div class="card">
+            @if (Model.ToList().Capacity > 0)
+            {
+                <div class="card-head Textos"><h1>Lista de Personas</h1></div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>  Nombre  </th>
+                                <th>  Fecha de Nacimiento  </th>
+                                <th>    </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ToList())
+                            {
+                                <tr>
+                                    <td style="width:35%">@item.Nombre</td>
+                                    <td style="width:35%">@item.FechaDeNacimiento.Value.ToShortDateString()</td>
+                                    <td style="width:10%"><a href="~/Persona/EliminarPersona/@item.Id" onclick="return confirm('Desea eliminar el registro?');"><span class="far fa-trash-alt text-danger"></span></a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-success" href="~/Persona/Agregar"><apan class="glyphicon glyphicon-edit">Registro</apan></a>
+                </div>
+            }
+            else
+            {
+                <div class="card-footer d-flex justify-content-center">
+                    <a class="btn btn-success" href="~/Persona/Agregar"><span class="glyphicon glyphicon-edit"></span> Registro</a>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
