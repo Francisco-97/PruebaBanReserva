@@ -27,7 +27,8 @@
 
                     <div class="input-group mt-4" data-provide="datepicker">
                         <span class="input-group-addon" id="calendar"><i class="glyphicon glyphicon-calendar"></i> </span>
-                        <input type="text" name="FechaDeNacimiento" value="" autocomplete="off" title="Ingrese Fecha de Nacimiento" required class="form-control" id="datepicker" placeholder="Fecha de Nacimiento" />
+                        @Html.EditorFor(model => model.FechaDeNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+                        <!--<input type="text" name="FechaDeNacimiento" value="" autocomplete="off" title="Ingrese Fecha de Nacimiento" required class="form-control" id="datepicker" placeholder="Fecha de Nacimiento" />-->
                     </div>
                     <div class="card-footer d-flex justify-content-center">
                         <button class="btn btn-primary" type="submit" id="btnSub"><span class="glyphicon glyphicon-save"></span> Registrar</button>
