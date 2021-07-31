@@ -25,7 +25,7 @@
                             {
                                 <tr>
                                     <td style="width:35%">@item.Nombre</td>
-                                    <td style="width:35%">@item.FechaDeNacimiento.Value.ToShortDateString()</td>
+                                    <td style="width:35%">@item.FechaDeNacimiento</td>
                                     <td style="width:10%"><a href="~/Persona/EliminarPersona/@item.Id" onclick="return confirm('Desea eliminar el registro?');"><span class="far fa-trash-alt text-danger"></span></a></td>
                                 </tr>
                             }

@@ -11,11 +11,15 @@ namespace Prueba_BanReservas.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Persona
     {
         public int Id { get; set; }
+        [StringLength (20, MinimumLength = 3)]
         public string Nombre { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "dd/MM/yyy", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> FechaDeNacimiento { get; set; }
 
 
