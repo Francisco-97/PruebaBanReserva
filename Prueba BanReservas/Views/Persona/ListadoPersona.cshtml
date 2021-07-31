@@ -15,8 +15,8 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>  Nombre  </th>
-                                <th>  Fecha de Nacimiento  </th>
+                                <th class="text-center">  Nombre  </th>
+                                <th class="text-center">  Fecha de Nacimiento  </th>
                                 <th>    </th>
                             </tr>
                         </thead>
@@ -24,8 +24,8 @@
                             @foreach (var item in Model.ToList())
                             {
                                 <tr>
-                                    <td style="width:35%">@item.Nombre</td>
-                                    <td style="width:35%">@item.FechaDeNacimiento</td>
+                                    <td class="text-center" style="width:35%">@item.Nombre</td>
+                                    <td class="text-center" style="width:35%">@Html.DisplayFor(modelItem => item.FechaDeNacimiento)</td>
                                     <td style="width:10%"><a href="~/Persona/EliminarPersona/@item.Id" onclick="return confirm('Desea eliminar el registro?');"><span class="far fa-trash-alt text-danger"></span></a></td>
                                 </tr>
                             }

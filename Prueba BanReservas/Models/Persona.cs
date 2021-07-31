@@ -19,8 +19,8 @@ namespace Prueba_BanReservas.Models
         [StringLength (20, MinimumLength = 3)]
         public string Nombre { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "dd/MM/yyy", ApplyFormatInEditMode = true)]
-        public Nullable<System.DateTime> FechaDeNacimiento { get; set; }
+        [DisplayFormat (DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public DateTime FechaDeNacimiento { get; set; }
 
 
 
